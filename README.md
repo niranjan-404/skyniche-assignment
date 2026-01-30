@@ -44,8 +44,6 @@ EMBEDDING_MODEL='your-embedding-model-name'
 
 ```
 
-> Note: Ensure you create a folder in your project root and place your source files inside it.
-
 4. Running the Application
 
 Launch the Streamlit interface directly from your terminal:
