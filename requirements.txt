@@ -1,0 +1,9 @@
+langchain-huggingface 
+transformers 
+torch 
+accelerate
+langchain-chroma
+langchain-huggingface 
+sentence-transformers
+langchain-community 
+pymupdf
