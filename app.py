@@ -1,5 +1,9 @@
 import streamlit as st
-from processing import rag
+from processing import rag, create_vdb
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 st.set_page_config(page_title="RAG Chatbot", layout="centered")
 st.title("SKYNICHE Chatbot")
@@ -11,10 +15,18 @@ for msg in st.session_state.messages:
     with st.chat_message(msg["role"]):
         st.markdown(msg["content"])
 
+if not os.path.isdir("ksyniche"):
+    print("Creating Vector DB...")
+    create_vdb()
+
 query = st.chat_input("Ask something from your document...")
 
 if query:
-    st.session_state.messages.append({"role": "user", "content": query})
+
+    st.session_state.messages.append({
+        "role": "user",
+        "content": query
+    })
 
     with st.chat_message("user"):
         st.markdown(query)
@@ -24,4 +36,7 @@ if query:
             response = rag(query, st.session_state.messages)
             st.markdown(response)
 
-    st.session_state.messages.append({"role": "assistant", "content": response})
+    st.session_state.messages.append({
+        "role": "assistant",
+        "content": response
+    })

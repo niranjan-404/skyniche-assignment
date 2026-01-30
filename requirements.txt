@@ -1,9 +1,13 @@
-langchain-huggingface 
-transformers 
-torch 
-accelerate
-langchain-chroma
-langchain-huggingface 
-sentence-transformers
-langchain-community 
-pymupdf
+accelerate==1.12.0
+langchain-chroma==1.1.0
+langchain-community==0.4.1
+langchain-huggingface==1.2.0
+sentence-transformers==5.2.2
+transformers==4.57.6
+PyMuPDF==1.26.7
+
+torch==2.10.0+cu128
+torchvision==0.25.0+cu128
+torchaudio==2.10.0+cu128
+
+--index-url https://download.pytorch.org/whl/cu128
